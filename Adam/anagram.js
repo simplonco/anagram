@@ -35,7 +35,7 @@ Anagram.prototype.matches = function(words) {
 
     }
     return matches;
-};
+}
 
 
 module.exports = Anagram;
