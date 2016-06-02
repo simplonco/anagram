@@ -11,6 +11,20 @@ function Anagram(word) {
 }
 
 Anagram.prototype.matches = function (words) {
+  if(typeof(words) === "string") {
+  	// areAnagrams(words, this.word) ? return words: return '';
+  	if(areAnagrams(words, this.word)) {
+  		console.log(this.word);
+  		console.log(words);
+  		console.log(areAnagrams(words, this.word));
+  		return [words];
+  	}
+  }
+  else {
+  	return words.filter(function(word) {
+    return areAnagrams(this.word, word);
+  }, this);	
+  }
   return words.filter(function(word) {
     return areAnagrams(this.word, word);
   }, this);
