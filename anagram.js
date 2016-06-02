@@ -11,9 +11,23 @@ function Anagram(word) {
 }
 
 Anagram.prototype.matches = function (words) {
-//
-// YOUR CODE GOES HERE
-//
+  return words.filter(function(word) {
+    return areAnagrams(this.word, word);
+  }, this);
+};
+
+function areAnagrams(word1, word2) {
+  word1 = word1.toLowerCase();
+  word2 = word2.toLowerCase();
+  return word1 !== word2 && haveSameLetters(word1, word2);
+}
+
+function haveSameLetters(word1, word2) {
+  return sorted(word1) == sorted(word2);
+}
+
+function sorted(str) {
+  return str.split('').sort().join('');
 }
 
 module.exports = Anagram;
