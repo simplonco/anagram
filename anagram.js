@@ -16,7 +16,7 @@ Anagram.prototype.matches = function (words) {
     for (var ii = 0; ii < words.length; ii++) {
         var elements = words[ii].split("").sort();
         if (elements.join() === res.join()) {
-            result.push(words[ii]);
+            return result.push(words[ii]);
         } 
         return "No Match";
     }
