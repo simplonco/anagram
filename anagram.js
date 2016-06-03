@@ -7,13 +7,22 @@
 'use strict';
 
 function Anagram(word) {
-  this.word = word;
+    this.word = word;
 }
 
 Anagram.prototype.matches = function (words) {
-//
-// YOUR CODE GOES HERE
-//
-}
+    var result = [];
+    var res = this.word.split("").sort();
+    for (var ii = 0; ii < words.length; ii++) {
+        var elements = words[ii].split("").sort();
+        if (elements.join() === res.join()) {
+            result.push(words[ii]);
+        } else {
+            console.log("No Match");
+        }
+
+    }
+
+};
 
 module.exports = Anagram;
