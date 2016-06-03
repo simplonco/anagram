@@ -20,7 +20,7 @@ Anagram.prototype.matches = function (words) {
         } else {
            return "No Match";
         }
-
+return result;
     }
 
 };
